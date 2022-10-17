@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import App2 from './App2';
 // APP.js에서 사용자 정의 컴포넌트를 가져와서 사용
 import reportWebVitals from './reportWebVitals';
 
