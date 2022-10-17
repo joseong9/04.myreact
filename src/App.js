@@ -22,4 +22,5 @@ function App() {
   );
 }
 
+// 위에서 만들어 놓은 사용자 정의 태그를 보냄
 export default App;
