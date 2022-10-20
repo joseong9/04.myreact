@@ -1,37 +1,37 @@
-import {useState} from 'react'
-function Ex04(){
-    //const [inputId, setInputId] = useState('');
-    //const [inputPw, setInputPw] = useState('');
-    const [result , setResult] = useState('로그인 실패')
-
-    let inputId = "";
-    let inputPw = "";
-    //일반 변수는 화면이 렌더링 될때 다시 처음 초기값으로 돌아간다
-    //화면이 다시 렌더링 됨(상태값이 바뀔때)
-
-    function getId(e){
-        //setInputId(e.target.value);
-        inputId = e.target.value;
+import {useState, useEffect} from 'react'
+function Ex04() {
+    const [inputData, setInputData] = useState('로그인 실패');
+    const [inputID, setInputID] = useState();
+    const [inputPW, setInputPW] = useState();
+    // 일반 변수는  화면이 렌더링 될 때 --> 다시 맨처음 초기값으로 돌아간다!
+    // 화면이 다시 렌더링 된다 --> 상태값이 바뀔 때
+    // let IDdata = "";
+    // let PWdata = "";
+    useEffect(function() {
+        return click()
+    },[inputPW])
+    function ID(e) {
+        setInputID(e.target.value);
+        // IDdata = e.target.value;
     }
-    function getPw(e){
-        //setInputPw(e.target.value);
-        inputPw = e.target.value;
+    function PW(e) {
+        setInputPW(e.target.value);
+        // PWdata = e.target.value;
     }
-    function chResult(){
-        if(inputId == 'smhrd' && inputPw =='123'){
-            setResult("smhrd님 환영합니다")
+    function click() {
+        if(inputID == "smhrd" && inputPW == "123") {
+            setInputData("SMHRD님 환영합니다")
+        } else {
+            setInputData("로그인실패")
         }
-       else{
-            setResult("다시 입력해주세요")
-       }
     }
     return(
         <>
-            <input onChange={getId}></input>
+            <input onChange={ID} placeholder="아이디입력"></input>
             <br></br>
-            <input onChange={getPw}></input>
-            <button onClick={chResult}>로그인</button>
-            <h1>{result}</h1>
+            <input onChange={PW} placeholder="비밀번호 입력"></input>
+            <button onClick={click}>로그인</button>
+            <h1>{inputData}</h1>
         </>
     )
 }
