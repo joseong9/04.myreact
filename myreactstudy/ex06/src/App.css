@@ -1,0 +1,15 @@
+#container, #container>div div{
+  border : 5px solid blue;
+  margin : 10px;
+}
+
+#grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.root{
+  border : 5px solid coral;
+  margin : 10px;
+  width: 125px;
+}
